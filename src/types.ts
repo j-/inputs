@@ -31,3 +31,15 @@ export const ButtonsTypeLabels = {
 	[ButtonsType.BACK]:          'Back',
 	[ButtonsType.FORWARD]:       'Forward',
 };
+
+export enum DeltaMode {
+	PIXEL = 0,
+	LINE  = 1,
+	PAGE  = 2,
+}
+
+export const DeltaModeLabels = {
+	[DeltaMode.PIXEL]: 'Pixel',
+	[DeltaMode.LINE]:  'Line',
+	[DeltaMode.PAGE]:  'Page',
+};

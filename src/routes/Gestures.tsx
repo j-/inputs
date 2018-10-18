@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { BrowserRouterProps } from 'react-router-dom';
+import DeltaMode from '../components/DeltaMode';
 
 interface State {
+	wheelEvent: WheelEvent;
 	deltaX: number;
 	deltaY: number;
 	deltaZ: number;
@@ -13,6 +15,7 @@ interface State {
 
 export default class Gestures extends React.Component<BrowserRouterProps, State> {
 	state: State = {
+		wheelEvent: new WheelEvent('wheel'),
 		deltaX: 0,
 		deltaY: 0,
 		deltaZ: 0,
@@ -39,25 +42,31 @@ export default class Gestures extends React.Component<BrowserRouterProps, State>
 
 				<dl>
 					<dt>deltaX</dt>
-					<dd><pre>{this.state.deltaX}</pre></dd>
+					<dd><code>{this.state.deltaX}</code></dd>
 
 					<dt>deltaY</dt>
-					<dd><pre>{this.state.deltaY}</pre></dd>
+					<dd><code>{this.state.deltaY}</code></dd>
 
 					<dt>deltaZ</dt>
-					<dd><pre>{this.state.deltaZ}</pre></dd>
+					<dd><code>{this.state.deltaZ}</code></dd>
 
 					<dt>maxDeltaX</dt>
-					<dd><pre>{this.state.maxDeltaX}</pre></dd>
+					<dd><code>{this.state.maxDeltaX}</code></dd>
 
 					<dt>maxDeltaY</dt>
-					<dd><pre>{this.state.maxDeltaY}</pre></dd>
+					<dd><code>{this.state.maxDeltaY}</code></dd>
 
 					<dt>maxDeltaZ</dt>
-					<dd><pre>{this.state.maxDeltaZ}</pre></dd>
+					<dd><code>{this.state.maxDeltaZ}</code></dd>
 
 					<dt>ctrlKey</dt>
-					<dd><pre>{this.state.ctrlKey ? 'true' : 'false'}</pre></dd>
+					<dd><code>{this.state.ctrlKey ? 'true' : 'false'}</code></dd>
+
+					<dt>deltaMode</dt>
+					<dd>
+						<code>{this.state.wheelEvent.deltaMode}</code>
+						<DeltaMode value={this.state.wheelEvent.deltaMode} />
+					</dd>
 
 				</dl>
 			</div>
@@ -75,6 +84,7 @@ export default class Gestures extends React.Component<BrowserRouterProps, State>
 			maxDeltaY = Math.max(absDeltaY, maxDeltaY);
 			maxDeltaZ = Math.max(absDeltaZ, maxDeltaZ);
 			return {
+				wheelEvent: e,
 				deltaX,
 				deltaY,
 				deltaZ,
