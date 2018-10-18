@@ -33,9 +33,9 @@ export const ButtonsTypeLabels = {
 };
 
 export enum DeltaMode {
-	PIXEL = 0,
-	LINE  = 1,
-	PAGE  = 2,
+	PIXEL = WheelEvent.DOM_DELTA_PIXEL,
+	LINE  = WheelEvent.DOM_DELTA_LINE,
+	PAGE  = WheelEvent.DOM_DELTA_PAGE,
 }
 
 export const DeltaModeLabels = {
