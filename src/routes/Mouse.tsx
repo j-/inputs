@@ -9,7 +9,7 @@ interface State {
 	dblclickEvent: MouseEvent;
 }
 
-export default class Pressure extends React.Component<BrowserRouterProps, State> {
+export default class Mouse extends React.Component<BrowserRouterProps, State> {
 	state: State = {
 		mousedownEvent: new MouseEvent('mousedown'),
 		mouseupEvent: new MouseEvent('mouseup'),
