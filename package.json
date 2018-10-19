@@ -12,7 +12,9 @@
     "start": "react-scripts-j start",
     "build": "react-scripts-j build",
     "test": "react-scripts-j test --env=jsdom",
-    "eject": "react-scripts-j eject"
+    "eject": "react-scripts-j eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@types/jest": "^23.3.5",
@@ -20,6 +22,19 @@
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
     "@types/react-router-dom": "^4.3.1",
+    "gh-pages": "^2.0.1",
     "typescript": "^3.1.3"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-/inputs.git"
+  },
+  "author": "Jamie Hoeks <j@skeoh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j-/inputs/issues"
+  },
+  "homepage": "https://skeoh.com/inputs",
+  "description": ""
 }
