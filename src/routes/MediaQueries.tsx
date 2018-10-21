@@ -2,9 +2,9 @@ import * as React from 'react';
 import { BrowserRouterProps } from 'react-router-dom';
 import MediaQuery from '../components/MediaQuery';
 
-const Matches: React.StatelessComponent<{ query: string }> = ({ query }) => (
-	<MediaQuery mediaQuery={query}>
-		{(matches) => matches ? 'true' : 'false'}
+const Matches: React.StatelessComponent<{ feature: string, value: string }> = ({ feature, value }) => (
+	<MediaQuery mediaQuery={`(${feature}: ${value})`}>
+		{(matches) => matches ? <code>{value}</code> : null}
 	</MediaQuery>
 );
 
@@ -12,50 +12,32 @@ const MediaQueries: React.StatelessComponent<BrowserRouterProps> = () => (
 	<div>
 		<h2>Media Queries</h2>
 
-		<h3><code>pointer</code></h3>
-
 		<dl>
-			<dt><code>none</code></dt>
-			<dd><code><Matches query="(pointer: none)" /></code></dd>
-
-			<dt><code>coarse</code></dt>
-			<dd><code><Matches query="(pointer: coarse)" /></code></dd>
-
-			<dt><code>fine</code></dt>
-			<dd><code><Matches query="(pointer: fine)" /></code></dd>
-		</dl>
-
-		<h3><code>hover</code></h3>
-
-		<dl>
-			<dt><code>none</code></dt>
-			<dd><code><Matches query="(hover: none)" /></code></dd>
-
 			<dt><code>hover</code></dt>
-			<dd><code><Matches query="(hover: hover)" /></code></dd>
-		</dl>
+			<dd>
+				<Matches feature="hover" value="none" />
+				<Matches feature="hover" value="hover" />
+			</dd>
 
-		<h3><code>any-pointer</code></h3>
+			<dt><code>any-hover</code></dt>
+			<dd>
+				<Matches feature="any-hover" value="none" />
+				<Matches feature="any-hover" value="hover" />
+			</dd>
 
-		<dl>
-			<dt><code>none</code></dt>
-			<dd><code><Matches query="(any-pointer: none)" /></code></dd>
+			<dt><code>pointer</code></dt>
+			<dd>
+				<Matches feature="pointer" value="none" />
+				<Matches feature="pointer" value="coarse" />
+				<Matches feature="pointer" value="fine" />
+			</dd>
 
-			<dt><code>coarse</code></dt>
-			<dd><code><Matches query="(any-pointer: coarse)" /></code></dd>
-
-			<dt><code>fine</code></dt>
-			<dd><code><Matches query="(any-pointer: fine)" /></code></dd>
-		</dl>
-
-		<h3><code>any-hover</code></h3>
-
-		<dl>
-			<dt><code>none</code></dt>
-			<dd><code><Matches query="(any-hover: none)" /></code></dd>
-
-			<dt><code>hover</code></dt>
-			<dd><code><Matches query="(any-hover: hover)" /></code></dd>
+			<dt><code>any-pointer</code></dt>
+			<dd>
+				<Matches feature="any-pointer" value="none" />
+				<Matches feature="any-pointer" value="coarse" />
+				<Matches feature="any-pointer" value="fine" />
+			</dd>
 		</dl>
 	</div>
 );
