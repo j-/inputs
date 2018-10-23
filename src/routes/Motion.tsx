@@ -8,7 +8,7 @@ interface State {
 
 export default class Motion extends React.Component<BrowserRouterProps, State> {
 	state: State = {
-		event: new DeviceMotionEvent('devicemotionevent'),
+		event: new DeviceMotionEvent('devicemotion'),
 	};
 
 	componentDidMount () {
