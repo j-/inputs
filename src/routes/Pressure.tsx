@@ -50,7 +50,6 @@ export default class Pressure extends React.Component<BrowserRouterProps, State>
 	}
 
 	private handleWebkitmouseforcechanged = (e: MouseEvent) => {
-		e.preventDefault();
 		const force = e['webkitForce'] || null;
 		this.setState((state) => ({
 			force,

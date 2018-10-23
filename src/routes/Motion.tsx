@@ -75,7 +75,6 @@ export default class Motion extends React.Component<BrowserRouterProps, State> {
 	}
 
 	private handleDevicemotion = (e: DeviceMotionEvent) => {
-		e.preventDefault();
 		this.setState({
 			event: e,
 		});
