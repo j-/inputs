@@ -20,6 +20,7 @@ export default class Orientation extends React.Component<BrowserRouterProps, Sta
 	}
 
 	render () {
+		const { absolute, alpha, beta, gamma } = this.state.event;
 		return (
 			<div>
 				<h2>Orientation</h2>
@@ -28,16 +29,16 @@ export default class Orientation extends React.Component<BrowserRouterProps, Sta
 
 				<dl>
 					<dt><code>absolute</code></dt>
-					<dd><code>{this.state.event.absolute || <NA />}</code></dd>
+					<dd><code>{absolute || <NA />}</code></dd>
 
 					<dt><code>alpha</code></dt>
-					<dd><code>{this.state.event.alpha || <NA />}</code></dd>
+					<dd><code>{alpha || <NA />}</code></dd>
 
 					<dt><code>beta</code></dt>
-					<dd><code>{this.state.event.beta || <NA />}</code></dd>
+					<dd><code>{beta || <NA />}</code></dd>
 
 					<dt><code>gamma</code></dt>
-					<dd><code>{this.state.event.gamma || <NA />}</code></dd>
+					<dd><code>{gamma || <NA />}</code></dd>
 				</dl>
 			</div>
 		);
