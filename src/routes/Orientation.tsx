@@ -8,7 +8,7 @@ interface State {
 
 export default class Orientation extends React.Component<BrowserRouterProps, State> {
 	state: State = {
-		event: new DeviceOrientationEvent('deviceorientationevent'),
+		event: new DeviceOrientationEvent('deviceorientation'),
 	};
 
 	componentDidMount () {
