@@ -2,6 +2,7 @@ import * as React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Navigation from './Navigation';
 import Home from '../routes/Home';
+import ContextMenu from '../routes/ContextMenu';
 import Input from '../routes/Input';
 import MediaQueries from 'src/routes/MediaQueries';
 import Motion from '../routes/Motion';
@@ -18,6 +19,7 @@ const App: React.StatelessComponent = () => (
 			<Navigation />
 
 			<Route exact={true} path="/" component={Home} />
+			<Route path="/context-menu" component={ContextMenu} />
 			<Route path="/input" component={Input} />
 			<Route path="/media-queries" component={MediaQueries} />
 			<Route path="/motion" component={Motion} />

@@ -5,6 +5,7 @@ const Navigation: React.StatelessComponent = () => (
 	<div className="Navigation">
 		<ul>
 			<li><Link to="/">Home</Link></li>
+			<li><Link to="/context-menu">Context Menu</Link></li>
 			<li><Link to="/input">Input</Link></li>
 			<li><Link to="/media-queries">Media Queries</Link></li>
 			<li><Link to="/motion">Motion</Link></li>
