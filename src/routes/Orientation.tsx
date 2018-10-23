@@ -44,7 +44,6 @@ export default class Orientation extends React.Component<BrowserRouterProps, Sta
 	}
 
 	private handleDeviceorientation = (e: DeviceOrientationEvent) => {
-		e.preventDefault();
 		this.setState({
 			event: e,
 		});
