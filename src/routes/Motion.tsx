@@ -12,11 +12,11 @@ export default class Motion extends React.Component<BrowserRouterProps, State> {
 	};
 
 	componentDidMount () {
-		window.addEventListener('devicemotionevent', this.handleDevicemotionevent);
+		window.addEventListener('devicemotion', this.handleDevicemotion);
 	}
 
 	componentWillUnmount () {
-		window.removeEventListener('devicemotionevent', this.handleDevicemotionevent);
+		window.removeEventListener('devicemotion', this.handleDevicemotion);
 	}
 
 	render () {
@@ -74,7 +74,7 @@ export default class Motion extends React.Component<BrowserRouterProps, State> {
 		);
 	}
 
-	private handleDevicemotionevent = (e: DeviceMotionEvent) => {
+	private handleDevicemotion = (e: DeviceMotionEvent) => {
 		e.preventDefault();
 		this.setState({
 			event: e,
