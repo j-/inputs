@@ -34,16 +34,16 @@ export default class Pressure extends React.Component<BrowserRouterProps, State>
 
 				<dl>
 					<dt>Force (current)</dt>
-					<dd><pre>{this.state.force || <NA />}</pre></dd>
+					<dd><code>{this.state.force || <NA />}</code></dd>
 
 					<dt>Force (max)</dt>
-					<dd><pre>{this.state.max || <NA />}</pre></dd>
+					<dd><code>{this.state.max || <NA />}</code></dd>
 
 					<dt>Force at mouse down</dt>
-					<dd><pre>{this.state.forceAtMouseDown || <NA />}</pre></dd>
+					<dd><code>{this.state.forceAtMouseDown || <NA />}</code></dd>
 
 					<dt>Force at force mouse down</dt>
-					<dd><pre>{this.state.forceAtForceMouseDown || <NA />}</pre></dd>
+					<dd><code>{this.state.forceAtForceMouseDown || <NA />}</code></dd>
 				</dl>
 			</div>
 		);
