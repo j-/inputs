@@ -5,16 +5,23 @@ import NA from '../components/NA';
 interface State {
 	force: number | null;
 	max: number;
-	forceAtForceMouseDown: number | null,
-	forceAtMouseDown: number | null,
+	forceAtForceMouseDown?: number,
+	forceAtMouseDown?: number,
 }
+
+declare var MouseEvent: {
+	readonly WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN?: number;
+	readonly WEBKIT_FORCE_AT_MOUSE_DOWN?: number;
+	prototype: MouseEvent;
+	new(typeArg: string, eventInitDict?: UIEventInit): MouseEvent;
+};
 
 export default class Pressure extends React.Component<BrowserRouterProps, State> {
 	state: State = {
 		force: null,
 		max: 0,
-		forceAtForceMouseDown: MouseEvent['WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN'],
-		forceAtMouseDown: MouseEvent['WEBKIT_FORCE_AT_MOUSE_DOWN'],
+		forceAtForceMouseDown: MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN,
+		forceAtMouseDown: MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN,
 	};
 
 	componentDidMount () {
@@ -26,6 +33,7 @@ export default class Pressure extends React.Component<BrowserRouterProps, State>
 	}
 
 	render () {
+		const { force, max, forceAtForceMouseDown, forceAtMouseDown } = this.state;
 		return (
 			<div>
 				<h2>Pressure</h2>
@@ -34,16 +42,16 @@ export default class Pressure extends React.Component<BrowserRouterProps, State>
 
 				<dl>
 					<dt>Force (current)</dt>
-					<dd><code>{this.state.force || <NA />}</code></dd>
+					<dd><code>{force || <NA />}</code></dd>
 
 					<dt>Force (max)</dt>
-					<dd><code>{this.state.max || <NA />}</code></dd>
+					<dd><code>{max || <NA />}</code></dd>
 
 					<dt>Force at mouse down</dt>
-					<dd><code>{this.state.forceAtMouseDown || <NA />}</code></dd>
+					<dd><code>{forceAtMouseDown || <NA />}</code></dd>
 
 					<dt>Force at force mouse down</dt>
-					<dd><code>{this.state.forceAtForceMouseDown || <NA />}</code></dd>
+					<dd><code>{forceAtForceMouseDown || <NA />}</code></dd>
 				</dl>
 			</div>
 		);
