@@ -7,6 +7,7 @@ const Navigation: React.StatelessComponent = () => (
 			<li><Link to="/">Home</Link></li>
 			<li><Link to="/input">Input</Link></li>
 			<li><Link to="/media-queries">Media Queries</Link></li>
+			<li><Link to="/motion">Motion</Link></li>
 			<li><Link to="/mouse">Mouse</Link></li>
 			<li><Link to="/orientation">Orientation</Link></li>
 			<li><Link to="/pressure">Pressure</Link></li>
