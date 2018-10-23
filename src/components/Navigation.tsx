@@ -11,6 +11,7 @@ const Navigation: React.StatelessComponent = () => (
 			<li><Link to="/motion">Motion</Link></li>
 			<li><Link to="/mouse">Mouse</Link></li>
 			<li><Link to="/orientation">Orientation</Link></li>
+			<li><Link to="/pointer">Pointer</Link></li>
 			<li><Link to="/pressure">Pressure</Link></li>
 			<li><Link to="/wheel">Wheel</Link></li>
 		</ul>
