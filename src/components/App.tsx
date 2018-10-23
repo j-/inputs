@@ -5,6 +5,7 @@ import Home from '../routes/Home';
 import Input from '../routes/Input';
 import MediaQueries from 'src/routes/MediaQueries';
 import Mouse from '../routes/Mouse';
+import Orientation from '../routes/Orientation';
 import Pressure from '../routes/Pressure';
 import Wheel from '../routes/Wheel';
 
@@ -19,6 +20,7 @@ const App: React.StatelessComponent = () => (
 			<Route path="/input" component={Input} />
 			<Route path="/media-queries" component={MediaQueries} />
 			<Route path="/mouse" component={Mouse} />
+			<Route path="/orientation" component={Orientation} />
 			<Route path="/pressure" component={Pressure} />
 			<Route path="/wheel" component={Wheel} />
 		</div>
